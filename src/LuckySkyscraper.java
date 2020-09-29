@@ -11,4 +11,18 @@ public class LuckySkyscraper {
             }while(fakeFloor % 10 == 4 || fakeFloor % 100 == 13);
         }
     }
+
+    static public int toRealFloor(int fakeFloorGoal){
+        var fakeFloor = 1;
+        for (var realFloor = 1; realFloor <= fakeFloor; realFloor++){
+            if (fakeFloorGoal == fakeFloor){
+                return realFloor;
+            }
+            do{
+                fakeFloor++;
+            }while (fakeFloor % 10 == 4 || fakeFloor % 100 == 13);
+        }
+        return -1; // could not find real floor number
+    }
+
 }
